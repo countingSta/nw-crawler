@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>抓新闻超级小工具登录界面</title>
+    <link rel="stylesheet" type="text/css" href="./style/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/sweetalert/sweetalert.min.css" />
+    <script type="text/javascript" src="./lib/sweetalert/sweetalert.min.js"></script>
+    <script src="./js/index.js"></script>
+    <style type="text/css">
+    	.sweet-alert .sa-input-error{
+		  	top: 25px;
+		}
+    </style>
+</head>
+
+<body>
+    <script src="./lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+	    $(document).ready(function() {	
+	        swal({
+	            title: "登录",
+	            type: "input",
+	            inputType:"password",
+	            confirmButtonText: "确定",
+	            showCancelButton: false,
+	            closeOnConfirm: false,
+	            animation: "slide-from-top",
+	            inputPlaceholder: "请输入密码"
+	        },
+	        function(inputValue) {
+	            if (inputValue === "") {
+	                swal.showInputError("密码不能为空！");
+	                return false
+	            }else if(inputValue === SETTINGS_PWD){
+	            	swal("欢迎！", "登陆成功", "success");
+	            	window.location.href = "./index.html";
+	            	return true;
+	            }else{
+	            	swal.showInputError("密码错误！");
+	            	return false
+	            }         
+	        });
+	    })
+    </script>
+</body>
+
+</html>

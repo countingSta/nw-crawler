@@ -1,0 +1,17 @@
+{
+	"name": "fetch-gm",
+	"main": "login.html",
+	"single-instance": false,
+	"window": {
+		"show": true,
+		"resizable": true,
+		"toolbar": false,
+		"frame": true,
+		"position": "center",
+		"width": 1100,
+		"height": 650,
+		"min_width": 1024,
+		"min_height": 650,
+		"icon": "logo.png"
+	}
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>抓新闻超级小工具</title>
+    <link rel="stylesheet" type="text/css" href="./style/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./lib/laydate/skins/danlan/laydate.css"/>
+    <link rel="stylesheet" type="text/css" href="./lib/sweetalert/sweetalert.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./style/common.css"/>
+    <script type="text/javascript" src="./lib/laydate/laydate.js"></script>
+    <script type="text/javascript" src="./lib/sweetalert/sweetalert.min.js"></script>
+    <script src="./lib/jquery-2.1.4.min.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <div id="header">
+       <div class="container clear">
+            <div class="logo">
+                <span class="img"><img src="./images/logo.png" alt="犇店宝小工具"></span>
+                <span class="tips">网站采集</span>
+            </div>
+            <div class="userInfo">
+                <ul class="">
+                    <li><a href="javascript:void(0)" id="indexPage">首页</a></li>
+                    <li><a href="javascript:void(0)" id="addWebsite">添加网站</a></li>
+                    <li><a href="javascript:void(0)" id="favorites">收藏夹</a></li>
+                    <li><a href="javascript:void(0)" id="reload">刷新</a></li>
+                    <li><a href="./login.html">退出</a></li>
+                </ul>
+            </div>
+       </div>
+    </div>
+    <div id="main">
+        <!--网站列表  -->
+        <div class="m-left">
+            <div class="menu_list">
+                <ul id="m-left-list-container">
+                    <!-- <li class="zcd">
+                        <span class="item-txt ellipsis" title="四季美的汤包11111111111">四季美的汤包11111111111</span>
+                        <span class="item-edit"></span>
+                        <span class="item-remove"></span>
+                    </li>   -->            
+                </ul>
+            </div>
+        </div>
+        <!-- 主要内容 -->
+        <div class="m-content">
+            <!-- 列表操作 -->
+            <div class="m-content-ctrl">
+                <form>
+                    <span class="m-search">
+                        <input type="text" class="input-ctrl" id="search-word" />
+                        <span class="btn btn-xs btn-success" id="searchByWord">搜索</span>
+                    </span>
+                    <span class="btn btn-xs btn-success" id="collect">批量收藏</span>
+                </form>
+            </div>
+            <div class="m-list-container clear">
+            <!-- 新闻标题列表 -->
+    <!--             <div class="m-sub-list">
+                    <h3>河南政府网站</h3>
+                    <ul>
+                        <li class="clear">
+                            <span class="m-time">2017-04-14 12:00</span>
+                            <span class="m-title ellipsis">
+                                紧盯发展目标 抓住重点环节
+                                巩固经济持续向好发展态势
+                                陈润儿主持召开省政府常务会议
+                                分析上半年经济形势 安排下半年经济工作
+                            </span>
+                            <em class="check"></em>
+                        </li>
+                        <li class="clear">
+                            <span class="m-time">2017-04-14 12:00</span>
+                            <span class="m-title ellipsis">
+                                紧盯发展目标 抓住重点环节
+                                巩固经济持续向好发展态势
+                                陈润儿主持召开省政府常务会议
+                                分析上半年经济形势 安排下半年经济工作
+                            </span>
+                            <em></em>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+        <!-- 收藏夹 -->
+        <div class="m-right">
+            <div class="m-right-ctrl">
+                <form>
+                    <span class="m-search">
+                        <div class="search-date">
+                            <input
+                                id="startDate"
+                                class="laytime"
+                                type="text"
+                                placeholder="开始日期"
+                                readOnly
+                            />
+                            <input
+                                id="endDate"
+                                class="laytime"
+                                type="text"
+                                placeholder="结束日期"
+                                readOnly
+                            />
+                        </div>
+                        <input type="text" class="input-ctrl input-sm" id="search-favorites-word" />
+                        <span class="btn btn-xs btn-success" id="searchByFavorites">搜索</span>
+                    </span>
+                </form>
+            </div>
+            <div class="m-right-list">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th width="50%">标题</th>
+                            <th width="30%">收藏时间</th>
+                            <th width="20%">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="favorites-container">
+                       <!--  <tr>
+                            <td> 
+                                <span class="t-ellipsis">
+                                    紧盯发展目标 抓住重点环节
+                                    巩固经济持续向好发展态势
+                                    陈润儿主持召开省政府常务会议
+                                    分析上半年经济形势 安排下半年经济工作
+                                </span>
+                            </td>
+                            <td>2017-07-03</td>
+                            <td>
+                                <span class="btn btn-danger btn-xs m-right-del">删除</span>
+                            </td>
+                        </tr>   -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/utils.js"></script>
+    <script type="text/javascript" src="./js/system.js"></script>
+    <script type="text/javascript" src="./js/html.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+</body>
+
+</html>
